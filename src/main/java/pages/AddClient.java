@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,7 +15,7 @@ public class AddClient {
         /*@FindBy(xpath = "xpathvalue")
     WebElement selectorName;*/
 
-    private WebDriver driver ;
+   WebDriver driver ;
 
 public AddClient(WebDriver driver) {
 
@@ -67,6 +68,18 @@ public AddClient(WebDriver driver) {
 
     @FindBy(xpath = "//button[@id='btn-submit']")
     private WebElement save;
+
+
+    @FindBy(xpath = "//input[@id='client_birthdate']")
+    WebElement birthdate;
+
+    public void setBirthdate(String bDate)
+    {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].setAttribute('value','"+bDate+"')" , birthdate);
+    }
+
+
 
     @FindBy(xpath = "//span[@id='select2-client_language-container']")
     WebElement languageContainer;

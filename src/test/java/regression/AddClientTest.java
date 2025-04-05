@@ -1,7 +1,9 @@
 package regression;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.AddClient;
@@ -33,17 +35,17 @@ public class AddClientTest {
 
         AddClient addClientPage = new AddClient(driver);
 
-        addClientPage.setLanguage("English");
-        addClientPage.setCountry("India");
-        addClientPage.setGender("Female");
-
-        /*addClientPage.enterClientName("Rajesh");
+        addClientPage.enterClientName("Rajesh");
         addClientPage.enterClientSurname("Sharma");
+        addClientPage.setLanguage("English");
         addClientPage.enterStreetAddress1("56 MG Road");
         addClientPage.enterStreetAddress2("Near Lotus Temple");
         addClientPage.enterCity("Mumbai");
         addClientPage.enterState("Maharashtra");
         addClientPage.enterZipCode("400001");
+        addClientPage.setCountry("India");
+        addClientPage.setGender("Female");
+        addClientPage.setBirthdate("05-Sep-1985");
         addClientPage.enterPhoneNumber("9876543210");
         addClientPage.enterFaxNumber("0223456789");
         addClientPage.enterMobileNumber("9898989898");
@@ -51,6 +53,9 @@ public class AddClientTest {
         addClientPage.enterWebAddress("www.rajeshsharma.in");
         addClientPage.enterVATID("VAT987654");
         addClientPage.enterTaxesCode("TAX123456");
-        addClientPage.clickSave();*/
+        addClientPage.clickSave();
+
+
+
     }
 }
